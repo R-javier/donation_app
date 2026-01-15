@@ -1,6 +1,7 @@
 import * as v from "valibot";
+import { type Organization, OrganizationSchema } from "./schemas";
 
-const ORGANIZATIONS = [
+export const ORGANIZATIONS: Organization[] = [
   {
     id: 1,
     name: "Cruz Roja",
@@ -35,7 +36,4 @@ const ORGANIZATIONS = [
   },
 ];
 
-export const OrganizationSchema = v.object({
-  id: v.number(),
-  name: v.string(),
-});
+v.parse(v.array(OrganizationSchema), ORGANIZATIONS);
