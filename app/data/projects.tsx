@@ -60,3 +60,7 @@ export const PROJECTS: Project[] = [
 ];
 
 v.parse(v.array(ProjectSchema), PROJECTS);
+
+export function getProjectById(projectId: number) {
+  return PROJECTS.find((project) => project.id === projectId);
+}

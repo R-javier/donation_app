@@ -14,8 +14,21 @@ export default function IndexRoute() {
   };
 
   return (
-    <section style={{ maxWidth: 640, margin: "0 auto", padding: 16 }}>
-      <h1 style={{ fontSize: 18, margin: "0 0 12px" }}>Organizaciones</h1>
+    <section
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        minHeight: "100vh",
+        flexDirection: "column",
+        textAlign: "center",
+        maxWidth: 640,
+        margin: "0 auto",
+        padding: 26,
+        border: "1px solid #2a3442",
+        backgroundColor: "rgba(255,255,255,0.02)",
+      }}
+    >
+      <h1 style={{ fontSize: 30, margin: "0 0 12px" }}>Organizaciones:</h1>
       <ul style={{ display: "grid", gap: 8, padding: 0, listStyle: "none" }}>
         {organizations.map((org: Organization) => (
           <li
