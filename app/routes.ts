@@ -11,4 +11,6 @@ export default [
     "organization/:organizationId/project/:projectId",
     "routes/project.$projectId.tsx",
   ),
+  route("mercado-pago/success", "routes/mercado-pago.success.tsx"),
+  route("mercado-pago/failure", "routes/mercado-pago.failure.tsx"),
 ] satisfies RouteConfig;
