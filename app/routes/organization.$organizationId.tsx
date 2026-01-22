@@ -21,7 +21,7 @@ export async function loader({
 
 export default function OrganizationRoute() {
   const { organization, projects } = useLoaderData() as {
-    organization: { id: number; name: string };
+    organization: { id: number; name: string; image: string };
     projects: { id: number; name: string }[];
   };
 
@@ -49,9 +49,23 @@ export default function OrganizationRoute() {
       >
         <h1 style={{ fontSize: 30, margin: "0 0 12px" }}>Organización:</h1>
 
-        <h2 style={{ fontSize: 20, marginBottom: "12px" }}>
-          {organization.name}
-        </h2>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={organization.image}
+            alt={organization.name}
+            style={{
+              width: 230,
+              marginBottom: 16,
+              borderRadius: 4,
+            }}
+          />
+        </div>
 
         <h2 style={{ fontSize: 18, marginBottom: "15px" }}>Proyectos:</h2>
         <ul style={{ listStyle: "none", padding: 0, marginBottom: "16px" }}>

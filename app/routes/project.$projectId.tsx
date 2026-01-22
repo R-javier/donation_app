@@ -28,7 +28,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
 export default function ProjectRoute() {
   const { project, amounts } = useLoaderData() as {
-    project: { id: number; name: string; description: string };
+    project: { id: number; name: string; description: string; image: string };
     amounts: number[];
   };
 
@@ -36,20 +36,27 @@ export default function ProjectRoute() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
-        minHeight: "100vh",
         flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        minHeight: "100vh",
+        paddingTop: 140,
         textAlign: "center",
         maxWidth: 640,
         margin: "0 auto",
-        alignItems: "center",
         gap: 30,
         border: "1px solid #2a3442",
         backgroundColor: "rgba(255,255,255,0.02)",
-        padding: 16,
+        paddingLeft: 16,
+        paddingRight: 16,
       }}
     >
       <h1 style={{ fontSize: 28, margin: "0 0 2px" }}>{project.name}</h1>
+      <img
+        src={project.image}
+        style={{ width: 120, marginBottom: 16, borderRadius: 4 }}
+        alt=""
+      />
       <h2 style={{ fontSize: 20 }}>{project.description}</h2>
 
       <h3 style={{ fontSize: 18 }}>Elegí un monto para donar</h3>
